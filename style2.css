@@ -6,10 +6,6 @@
   --cor-texto: #333;
   --cor-header: #d43ff1;
   --cor-aviso: #fff3cd;
-  --cor-aviso-borda: #ffeeba;
-  --cor-container: #fff;
-  --cor-footer: #f1f1f1;
-  --cor-lista: #f9f9fb;
 }
 
 /* Estrutura geral */
@@ -42,34 +38,49 @@ header img {
   height: auto;
 }
 
-/* Menu horizontal */
+/* Menu vertical fixo */
+nav {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: var(--cor-principal);
+  padding-top: 20px;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 nav a {
-  color: var(--cor-principal);
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 15px;
+  display: block;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: var(--cor-secundaria);
+  border-radius: 6px;
 }
 
 /* Container padrão */
 .container, .login-box, .contacts-container {
   max-width: 800px;
   margin: 40px auto;
-  background: var(--cor-container);
+  background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-left: 220px;
 }
 
 h1 {
@@ -122,7 +133,7 @@ button:hover {
 .login-box {
   max-width: 400px;
   margin: 80px auto;
-  background: var(--cor-container);
+  background: #fff;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -171,7 +182,7 @@ button:hover {
   padding: 15px;
   border-radius: 6px;
   margin-bottom: 20px;
-  border: 1px solid var(--cor-aviso-borda);
+  border: 1px solid #ffeeba;
 }
 
 .contacts-container {
@@ -217,7 +228,7 @@ button:hover {
 }
 
 .list {
-  background: var(--cor-lista);
+  background: #f9f9fb;
   padding: 15px;
   border-radius: 6px;
   border: 1px solid #ddd;
@@ -225,7 +236,7 @@ button:hover {
 
 /* Footer */
 footer {
-  background-color: var(--cor-footer);
+  background-color: #f1f1f1;
   text-align: center;
   padding: 15px;
   margin-top: 30px;
@@ -236,17 +247,15 @@ footer a {
   text-decoration: none;
 }
 
-/* Layout dos artigos lado a lado */
+/* Layout dos artigos em colunas */
 .artigos {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .artigos article {
-  flex: 1;
-  min-width: 300px;
-  background: var(--cor-container);
+  background: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
